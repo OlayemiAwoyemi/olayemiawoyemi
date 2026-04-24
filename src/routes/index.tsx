@@ -104,7 +104,7 @@ function Home() {
       {/* Hero */}
       <section className="pt-40 pb-24 px-6 md:px-10 max-w-[1400px] mx-auto">
         <p className="text-sm text-muted-foreground mb-8">Communicative Designer · Product Manager</p>
-        <h1 className="font-serif text-[14vw] md:text-[10vw] leading-[0.95] tracking-tight">
+        <h1 className="font-serif font-bold text-[14vw] md:text-[10vw] leading-[0.95] tracking-tight">
           Brands that<br />speak loud.
         </h1>
         <div className="mt-12 flex items-center gap-6">
@@ -130,9 +130,9 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="01" label="Intro" />
           </div>
-          <p className="md:col-span-10 font-serif text-3xl md:text-5xl leading-[1.15] tracking-tight">
-            I'm Olayemi Awoyemi — a versatile communicative designer and technical product manager.
-            I build high-converting brands, polished product interfaces, and AI-powered systems.
+          <p className="md:col-span-10 font-serif text-3xl md:text-5xl leading-[1.15] tracking-tight font-normal">
+            I'm <strong className="font-semibold">Olayemi Awoyemi</strong> — a versatile communicative designer and technical product manager.
+            I build <strong className="font-semibold">high-converting brands</strong>, polished product interfaces, and <strong className="font-semibold">AI-powered systems</strong>.
             Operating from Ile-Ife, working with clients across Africa, the US, and beyond.
           </p>
         </div>
@@ -144,7 +144,7 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="02" label="Work" />
           </div>
-          <h2 className="md:col-span-10 font-serif text-5xl md:text-7xl tracking-tight">The work.</h2>
+          <h2 className="md:col-span-10 font-serif font-bold text-5xl md:text-7xl tracking-tight">The work.</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
@@ -179,11 +179,11 @@ function Home() {
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
-                  <h3 className="font-serif text-2xl tracking-tight">{p.title}</h3>
+                  <h3 className="font-serif font-semibold text-2xl tracking-tight">{p.title}</h3>
                   <p className="text-muted-foreground text-sm mt-1">{p.blurb}</p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className="text-sm">{p.year}</p>
+                  <p className="text-sm font-medium">{p.year}</p>
                   <p className="text-xs text-muted-foreground mt-1">{p.tags.join(" · ")}</p>
                 </div>
               </div>
@@ -198,12 +198,12 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="03" label="Services" />
           </div>
-          <h2 className="md:col-span-10 font-serif text-5xl md:text-7xl tracking-tight">What I do.</h2>
+          <h2 className="md:col-span-10 font-serif font-bold text-5xl md:text-7xl tracking-tight">What I do.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {services.map((s) => (
             <div key={s.title} className="bg-background p-8 md:p-10">
-              <h3 className="font-serif text-2xl tracking-tight">{s.title}</h3>
+              <h3 className="font-serif font-semibold text-2xl tracking-tight">{s.title}</h3>
               <p className="text-muted-foreground text-sm mt-3 leading-relaxed">{s.desc}</p>
             </div>
           ))}
@@ -216,7 +216,7 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="04" label="About" />
           </div>
-          <h2 className="md:col-span-10 font-serif text-4xl md:text-6xl tracking-tight leading-[1.05]">
+          <h2 className="md:col-span-10 font-serif font-bold text-4xl md:text-6xl tracking-tight leading-[1.05]">
             I'm Olayemi — I build brands and digital products that work.
           </h2>
         </div>
@@ -226,7 +226,7 @@ function Home() {
           <ul className="md:col-span-10 divide-y divide-border border-y border-border">
             {experience.map((e) => (
               <li key={e.co + e.period} className="grid grid-cols-12 gap-4 py-6">
-                <span className="col-span-12 md:col-span-5 font-serif text-2xl tracking-tight">{e.co}</span>
+                <span className="col-span-12 md:col-span-5 font-serif font-semibold text-2xl tracking-tight">{e.co}</span>
                 <span className="col-span-7 md:col-span-4 text-muted-foreground">{e.role}</span>
                 <span className="col-span-5 md:col-span-3 text-right md:text-left text-muted-foreground text-sm">
                   {e.period}
@@ -238,10 +238,10 @@ function Home() {
 
         <div className="grid md:grid-cols-12 gap-8 mt-16">
           <p className="md:col-span-2 text-sm text-muted-foreground">Toolkit</p>
-          <p className="md:col-span-10 text-lg leading-relaxed">
-            Figma, Adobe Suite, Affinity Designer, Corel, Canva, WordPress, CPanel, Excel.
-            <span className="text-muted-foreground"> · </span>
-            HTML, CSS, JavaScript, Lovable.dev, GitHub, Vercel.
+          <p className="md:col-span-10 text-lg leading-relaxed text-muted-foreground">
+            <strong className="font-semibold text-foreground">Design:</strong> Figma, Adobe Suite, Affinity Designer, Corel, Canva, WordPress, CPanel, Excel.
+            <br />
+            <strong className="font-semibold text-foreground">Build:</strong> HTML, CSS, JavaScript, Lovable.dev, GitHub, Vercel.
           </p>
         </div>
       </section>
@@ -252,9 +252,9 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="05" label="Note" />
           </div>
-          <blockquote className="md:col-span-10 font-serif text-3xl md:text-5xl leading-[1.2] tracking-tight">
-            "I meet demands efficiently and in record time — pairing design discipline
-            with the technical depth to ship products that hold up."
+          <blockquote className="md:col-span-10 font-serif text-3xl md:text-5xl leading-[1.2] tracking-tight font-normal text-muted-foreground">
+            "I meet demands <strong className="font-semibold text-foreground">efficiently and in record time</strong> — pairing design discipline
+            with the <strong className="font-semibold text-foreground">technical depth to ship products</strong> that hold up."
           </blockquote>
         </div>
       </section>
@@ -265,9 +265,9 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="06" label="Contact" />
           </div>
-          <h2 className="md:col-span-10 font-serif text-5xl md:text-8xl tracking-tight leading-[0.95]">
+          <h2 className="md:col-span-10 font-serif font-bold text-5xl md:text-8xl tracking-tight leading-[0.95]">
             Have a project?<br />
-            <span className="text-muted-foreground">Let's talk.</span>
+            <span className="text-muted-foreground font-normal">Let's talk.</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-12 gap-8">
