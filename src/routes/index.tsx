@@ -104,8 +104,8 @@ function Home() {
       {/* Hero */}
       <section className="pt-40 pb-24 px-6 md:px-10 max-w-[1400px] mx-auto">
         <p className="text-sm text-muted-foreground mb-8">Communicative Designer · Product Manager</p>
-        <h1 className="font-serif font-bold text-6xl md:text-8xl lg:text-9xl leading-[0.95] tracking-tight">
-          Brands that<br />speak loud.
+        <h1 className="font-serif font-bold text-5xl md:text-6xl lg:text-7xl leading-[1] tracking-tight">
+          Brands that<br />speak wow.
         </h1>
         <div className="mt-12 flex items-center gap-6">
           <a
@@ -156,9 +156,9 @@ function Home() {
               rel="noreferrer"
               className="group block"
             >
-              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-sm">
+              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-md">
                 {p.isNew && (
-                  <span className="absolute top-4 left-4 z-10 bg-lime-300 text-black text-xs font-medium px-2 py-0.5">
+                  <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5">
                     New
                   </span>
                 )}
@@ -168,7 +168,7 @@ function Home() {
                   title={p.title}
                   loading="lazy"
                   scrolling="no"
-                  className="absolute top-0 left-0 origin-top-left pointer-events-none transition-transform duration-700 group-hover:scale-[0.42]"
+                  className="absolute top-0 left-0 origin-center pointer-events-none transition-transform duration-500 ease-out group-hover:scale-[0.42]"
                   style={{
                     width: "250%",
                     height: "250%",
