@@ -156,7 +156,7 @@ function Home() {
               rel="noreferrer"
               className="group block"
             >
-              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-2xl">
+              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-[12px]">
                 {p.isNew && (
                   <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5 rounded-sm">
                     New
