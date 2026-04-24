@@ -158,7 +158,7 @@ function Home() {
             >
               <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-md">
                 {p.isNew && (
-                  <span className="absolute top-4 left-4 z-10 bg-lime-300 text-black text-xs font-medium px-2 py-0.5">
+                  <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5">
                     New
                   </span>
                 )}
@@ -168,7 +168,7 @@ function Home() {
                   title={p.title}
                   loading="lazy"
                   scrolling="no"
-                  className="absolute top-0 left-0 origin-center pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[0.42]"
+                  className="absolute top-0 left-0 origin-center pointer-events-none transition-transform duration-500 ease-out group-hover:scale-[0.42]"
                   style={{
                     width: "250%",
                     height: "250%",
