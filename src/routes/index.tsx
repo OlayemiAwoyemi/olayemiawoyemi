@@ -156,26 +156,28 @@ function Home() {
               rel="noreferrer"
               className="group block"
             >
-              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-md">
+              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-2xl">
                 {p.isNew && (
-                  <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5">
+                  <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5 rounded-sm">
                     New
                   </span>
                 )}
                 <div className="absolute inset-0 z-10" aria-hidden="true" />
-                <iframe
-                  src={p.url}
-                  title={p.title}
-                  loading="lazy"
-                  scrolling="no"
-                  className="absolute top-0 left-0 origin-center pointer-events-none transition-transform duration-500 ease-out group-hover:scale-[0.42]"
-                  style={{
-                    width: "250%",
-                    height: "250%",
-                    transform: "scale(0.4)",
-                    border: 0,
-                  }}
-                />
+                <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.04]">
+                  <iframe
+                    src={p.url}
+                    title={p.title}
+                    loading="lazy"
+                    scrolling="no"
+                    className="pointer-events-none origin-top-left"
+                    style={{
+                      width: "320%",
+                      height: "320%",
+                      transform: "scale(0.3125)",
+                      border: 0,
+                    }}
+                  />
+                </div>
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
