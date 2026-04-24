@@ -1,12 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import greenpeople from "@/assets/project-greenpeople.jpg";
-import prepper from "@/assets/project-prepper.jpg";
-import housefada from "@/assets/project-housefada.jpg";
-import jikona from "@/assets/project-jikona.jpg";
-import hellocv from "@/assets/project-hellocv.jpg";
-import guru from "@/assets/project-guru.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +27,6 @@ const projects = [
     blurb: "Branding, web design & AI automation agency.",
     year: "2026",
     tags: ["Brand", "Web Design"],
-    img: guru,
     url: "https://designers.guru",
     isNew: true,
   },
@@ -42,16 +35,14 @@ const projects = [
     blurb: "Domain administrator for professional .cv pages — 150+ countries.",
     year: "2025",
     tags: ["Brand Strategy", "UX"],
-    img: hellocv,
     url: "https://hello.cv",
     isNew: true,
   },
   {
     title: "Green People",
     blurb: "Political awareness platform for electoral credibility in Nigeria.",
-    year: "2024",
+    year: "2026",
     tags: ["Web Design", "Civic Tech"],
-    img: greenpeople,
     url: "https://greenpeople.ng",
   },
   {
@@ -59,23 +50,20 @@ const projects = [
     blurb: "A mobile app that helps users learn the way they chat.",
     year: "2023",
     tags: ["Product UI", "Mobile"],
-    img: prepper,
     url: "https://prepperlearning.com",
   },
   {
     title: "HouseFada",
     blurb: "Multiservice platform for premium living solutions in Nigeria.",
-    year: "2023",
+    year: "2026",
     tags: ["Web Design", "Brand"],
-    img: housefada,
     url: "https://housefada.com",
   },
   {
     title: "Jikona Evalora",
     blurb: "Data analytics & research firm — rigorous M&E across Africa.",
-    year: "2022",
+    year: "2026",
     tags: ["Brand", "Web Design"],
-    img: jikona,
     url: "https://jikonaevalora.com",
   },
 ];
@@ -174,13 +162,19 @@ function Home() {
                     New
                   </span>
                 )}
-                <img
-                  src={p.img}
-                  alt={p.title}
+                <div className="absolute inset-0 z-10" aria-hidden="true" />
+                <iframe
+                  src={p.url}
+                  title={p.title}
                   loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  scrolling="no"
+                  className="absolute top-0 left-0 origin-top-left pointer-events-none transition-transform duration-700 group-hover:scale-[0.42]"
+                  style={{
+                    width: "250%",
+                    height: "250%",
+                    transform: "scale(0.4)",
+                    border: 0,
+                  }}
                 />
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
