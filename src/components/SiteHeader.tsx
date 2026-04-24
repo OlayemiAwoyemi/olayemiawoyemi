@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+
 
 const nav = [
   { to: "/#work", label: "Work" },
