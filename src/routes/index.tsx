@@ -160,22 +160,34 @@ function Home() {
             <a
               key={p.title}
               href={p.url}
-              target="_blank"
+              target={p.url.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer"
               className="group block"
             >
-              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-[12px]">
+              <div className={`relative overflow-hidden aspect-[4/3] rounded-[12px] ${p.isCta ? "bg-gradient-to-br from-primary/10 via-secondary to-secondary border border-dashed border-foreground/20 flex items-center justify-center p-8" : "bg-secondary"}`}>
                 {p.isNew && (
                   <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5 rounded-sm">
                     New
                   </span>
                 )}
-                <img
-                  src={thumbnailFor(p.url)}
-                  alt={`${p.title} website screenshot`}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                />
+                {p.isCta ? (
+                  <div className="text-center">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">Now booking</p>
+                    <p className="font-sans font-bold text-2xl md:text-3xl tracking-[-0.025em] leading-[1.1]">
+                      Your project<br />should be next.
+                    </p>
+                    <p className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground border-b border-foreground/40 pb-0.5">
+                      Start a conversation →
+                    </p>
+                  </div>
+                ) : (
+                  <img
+                    src={thumbnailFor(p.url)}
+                    alt={`${p.title} website screenshot`}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  />
+                )}
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
@@ -184,7 +196,16 @@ function Home() {
                 </div>
                 <div className="text-right shrink-0">
                   <p className="text-[13px] font-semibold tabular-nums">{p.year}</p>
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-muted-foreground mt-1.5">{p.tags.join(" · ")}</p>
+                  <p className="text-[11px] uppercase tracking-[0.12em] text-muted-foreground mt-1.5">
+                    <span className="flex flex-col md:block text-right">
+                      {p.tags.map((t, i) => (
+                        <span key={t}>
+                          {t}
+                          {i < p.tags.length - 1 && <span className="hidden md:inline"> · </span>}
+                        </span>
+                      ))}
+                    </span>
+                  </p>
                 </div>
               </div>
             </a>
@@ -271,7 +292,7 @@ function Home() {
           </h2>
         </div>
         <div className="grid md:grid-cols-12 gap-8">
-          <div className="md:col-start-3 md:col-span-10 flex flex-wrap items-center gap-4">
+          <div className="md:col-start-3 md:col-span-10 flex flex-col md:flex-row md:flex-wrap md:items-center items-start gap-4">
             <a
               href="mailto:awoyemi.olayemi@gmail.com"
               className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-6 py-3 text-[13px] font-medium hover:opacity-90 transition-opacity"
