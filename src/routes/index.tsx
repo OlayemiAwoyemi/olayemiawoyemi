@@ -148,7 +148,7 @@ function Home() {
       <section id="work" className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32 scroll-mt-24">
         <div className="grid md:grid-cols-12 gap-8 mb-12">
           <div className="md:col-span-2">
-            <SectionLabel n="02" label="Work" />
+            <SectionLabel n="02" label="Works" />
           </div>
           <h2 className="md:col-span-10 font-sans font-bold text-3xl md:text-4xl lg:text-[44px] tracking-[-0.03em]">Selected works.</h2>
         </div>
