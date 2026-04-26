@@ -107,7 +107,11 @@ function Home() {
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 md:px-10 max-w-[1400px] mx-auto">
-        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">Communicative Designer · Product Manager</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">
+          <span className="block md:inline">Communicative Designer</span>
+          <span className="hidden md:inline"> · </span>
+          <span className="block md:inline">Product Manager</span>
+        </p>
         <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-[-0.03em]">
           Brands that<br />speak wow.
         </h1>
