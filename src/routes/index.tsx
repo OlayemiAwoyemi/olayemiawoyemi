@@ -116,11 +116,11 @@ function Home() {
         <div className="mt-10 flex items-center gap-6">
           <a
             href="#work"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-6 py-3 text-[13px] font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-5 py-2.5 md:px-6 md:py-3 text-[12px] md:text-[13px] font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
           >
-            See the Work
+            See my Works
           </a>
-          <span className="flex items-center gap-2 text-[13px] text-muted-foreground">
+          <span className="flex items-center gap-2 text-[12px] md:text-[13px] text-muted-foreground whitespace-nowrap">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -150,7 +150,7 @@ function Home() {
           <div className="md:col-span-2">
             <SectionLabel n="02" label="Work" />
           </div>
-          <h2 className="md:col-span-10 font-sans font-bold text-3xl md:text-4xl lg:text-[44px] tracking-[-0.03em]">Selected work.</h2>
+          <h2 className="md:col-span-10 font-sans font-bold text-3xl md:text-4xl lg:text-[44px] tracking-[-0.03em]">Selected works.</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
