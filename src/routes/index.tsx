@@ -31,14 +31,6 @@ const projects = [
     isNew: true,
   },
   {
-    title: "Hello CV",
-    blurb: "Domain administrator for professional .cv pages — 150+ countries.",
-    year: "2025",
-    tags: ["Brand Strategy", "UX"],
-    url: "https://hello.cv",
-    isNew: true,
-  },
-  {
     title: "Green People",
     blurb: "Political awareness platform for electoral credibility in Nigeria.",
     year: "2026",
@@ -66,12 +58,18 @@ const projects = [
     tags: ["Brand", "Web Design"],
     url: "https://jikonaevalora.com",
   },
+  {
+    title: "Your project should be next",
+    blurb: "Let's craft something memorable — brand, product, or AI-powered system.",
+    year: "2026",
+    tags: ["Available", "Let's Talk"],
+    url: "mailto:awoyemi.olayemi@gmail.com",
+    isCta: true,
+  },
 ];
 
 const experience = [
   { co: "Guru Designers", role: "Managing Partner", period: "Feb 2026 — Present" },
-  { co: "Hello CV", role: "Chief Design & Brand Officer", period: "Jan 2025 — Dec 2025" },
-  { co: "Go54 (Whogohost)", role: "Head of Design", period: "Sep 2022 — Dec 2024" },
   { co: "Moneymie", role: "Senior Graphics Designer", period: "Apr 2022 — Sep 2022" },
   { co: "Prepper Learning", role: "Technical Product Manager", period: "Feb 2020 — Present" },
   { co: "WSPOT", role: "Head, Projects", period: "Jan 2018 — Feb 2020" },
