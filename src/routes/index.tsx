@@ -260,9 +260,9 @@ function Home() {
         <div className="grid md:grid-cols-12 gap-8 mt-16">
           <p className="md:col-span-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Toolkit</p>
           <p className="md:col-span-10 text-[15px] md:text-base leading-relaxed text-muted-foreground">
-            <strong className="font-semibold text-foreground">Design:</strong> Figma, Adobe Suite, Affinity Designer, Corel, Canva, WordPress, CPanel, Excel.
+            <strong className="font-semibold text-foreground">Design:</strong> Figma, Adobe Suite, Affinity Designer, Corel, Canva, WordPress, Excel.
             <br />
-            <strong className="font-semibold text-foreground">Build:</strong> HTML, CSS, JavaScript, Lovable.dev, GitHub, Vercel.
+            <strong className="font-semibold text-foreground">Build:</strong> HTML, CSS, JavaScript, Lovable.dev, GitHub, Vercel, CPanel.
           </p>
         </div>
       </section>
