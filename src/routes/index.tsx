@@ -102,19 +102,19 @@ function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="pt-40 pb-24 px-6 md:px-10 max-w-[1400px] mx-auto">
-        <p className="text-sm text-muted-foreground mb-8">Communicative Designer · Product Manager</p>
-        <h1 className="font-serif font-bold text-5xl md:text-6xl lg:text-7xl leading-[1] tracking-tight">
-          Brands that<br />speak wow.
+      <section className="pt-40 pb-20 px-6 md:px-10 max-w-[1400px] mx-auto">
+        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">Communicative Designer · Product Manager</p>
+        <h1 className="font-serif font-light text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-[-0.025em]">
+          Brands that<br /><em className="italic font-normal">speak wow.</em>
         </h1>
-        <div className="mt-12 flex items-center gap-6">
+        <div className="mt-10 flex items-center gap-6">
           <a
             href="#work"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-7 py-3.5 text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-6 py-3 text-[13px] font-medium hover:opacity-90 transition-opacity"
           >
             See the Work
           </a>
-          <span className="flex items-center gap-2 text-sm text-muted-foreground">
+          <span className="flex items-center gap-2 text-[13px] text-muted-foreground">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -125,14 +125,14 @@ function Home() {
       </section>
 
       {/* Intro paragraph */}
-      <section className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32">
+      <section className="px-6 md:px-10 max-w-[1400px] mx-auto pb-28">
         <div className="grid md:grid-cols-12 gap-8">
           <div className="md:col-span-2">
             <SectionLabel n="01" label="Intro" />
           </div>
-          <p className="md:col-span-10 font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.2] tracking-tight font-normal">
-            I'm <strong className="font-semibold">Olayemi Awoyemi</strong> — a versatile communicative designer and technical product manager.
-            I build <strong className="font-semibold">high-converting brands</strong>, polished product interfaces, and <strong className="font-semibold">AI-powered systems</strong>.
+          <p className="md:col-span-10 font-serif text-xl md:text-2xl lg:text-[26px] leading-[1.4] tracking-[-0.015em] font-light text-foreground/85">
+            I'm <span className="text-foreground font-normal">Olayemi Awoyemi</span> — a versatile communicative designer and technical product manager.
+            I build <em className="italic text-foreground">high-converting brands</em>, polished product interfaces, and <em className="italic text-foreground">AI-powered systems</em>.
             Operating from Ile-Ife, working with clients across Africa, the US, and beyond.
           </p>
         </div>
