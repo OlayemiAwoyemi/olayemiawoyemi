@@ -90,8 +90,8 @@ const services = [
 
 function SectionLabel({ n, label }: { n: string; label: string }) {
   return (
-    <p className="text-sm text-muted-foreground tracking-wide">
-      {n} — {label}
+    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+      <span className="tabular-nums">{n}</span> — {label}
     </p>
   );
 }
