@@ -31,14 +31,6 @@ const projects = [
     isNew: true,
   },
   {
-    title: "Hello CV",
-    blurb: "Domain administrator for professional .cv pages — 150+ countries.",
-    year: "2025",
-    tags: ["Brand Strategy", "UX"],
-    url: "https://hello.cv",
-    isNew: true,
-  },
-  {
     title: "Green People",
     blurb: "Political awareness platform for electoral credibility in Nigeria.",
     year: "2026",
@@ -66,12 +58,18 @@ const projects = [
     tags: ["Brand", "Web Design"],
     url: "https://jikonaevalora.com",
   },
+  {
+    title: "Your project should be next",
+    blurb: "Let's craft something memorable — brand, product, or AI-powered system.",
+    year: "2026",
+    tags: ["Available", "Let's Talk"],
+    url: "mailto:awoyemi.olayemi@gmail.com",
+    isCta: true,
+  },
 ];
 
 const experience = [
   { co: "Guru Designers", role: "Managing Partner", period: "Feb 2026 — Present" },
-  { co: "Hello CV", role: "Chief Design & Brand Officer", period: "Jan 2025 — Dec 2025" },
-  { co: "Go54 (Whogohost)", role: "Head of Design", period: "Sep 2022 — Dec 2024" },
   { co: "Moneymie", role: "Senior Graphics Designer", period: "Apr 2022 — Sep 2022" },
   { co: "Prepper Learning", role: "Technical Product Manager", period: "Feb 2020 — Present" },
   { co: "WSPOT", role: "Head, Projects", period: "Jan 2018 — Feb 2020" },
@@ -109,7 +107,11 @@ function Home() {
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 md:px-10 max-w-[1400px] mx-auto">
-        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">Communicative Designer · Product Manager</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">
+          <span className="block md:inline">Communicative Designer</span>
+          <span className="hidden md:inline"> · </span>
+          <span className="block md:inline">Product Manager</span>
+        </p>
         <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-[-0.03em]">
           Brands that<br />speak wow.
         </h1>
@@ -158,22 +160,34 @@ function Home() {
             <a
               key={p.title}
               href={p.url}
-              target="_blank"
+              target={p.url.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer"
               className="group block"
             >
-              <div className="relative overflow-hidden bg-secondary aspect-[4/3] rounded-[12px]">
+              <div className={`relative overflow-hidden aspect-[4/3] rounded-[12px] ${p.isCta ? "bg-gradient-to-br from-primary/10 via-secondary to-secondary border border-dashed border-foreground/20 flex items-center justify-center p-8" : "bg-secondary"}`}>
                 {p.isNew && (
                   <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5 rounded-sm">
                     New
                   </span>
                 )}
-                <img
-                  src={thumbnailFor(p.url)}
-                  alt={`${p.title} website screenshot`}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                />
+                {p.isCta ? (
+                  <div className="text-center">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">Now booking</p>
+                    <p className="font-sans font-bold text-2xl md:text-3xl tracking-[-0.025em] leading-[1.1]">
+                      Your project<br />should be next.
+                    </p>
+                    <p className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground border-b border-foreground/40 pb-0.5">
+                      Start a conversation →
+                    </p>
+                  </div>
+                ) : (
+                  <img
+                    src={thumbnailFor(p.url)}
+                    alt={`${p.title} website screenshot`}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  />
+                )}
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
@@ -182,7 +196,16 @@ function Home() {
                 </div>
                 <div className="text-right shrink-0">
                   <p className="text-[13px] font-semibold tabular-nums">{p.year}</p>
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-muted-foreground mt-1.5">{p.tags.join(" · ")}</p>
+                  <p className="text-[11px] uppercase tracking-[0.12em] text-muted-foreground mt-1.5">
+                    <span className="flex flex-col md:block text-right">
+                      {p.tags.map((t, i) => (
+                        <span key={t}>
+                          {t}
+                          {i < p.tags.length - 1 && <span className="hidden md:inline"> · </span>}
+                        </span>
+                      ))}
+                    </span>
+                  </p>
                 </div>
               </div>
             </a>
@@ -269,7 +292,7 @@ function Home() {
           </h2>
         </div>
         <div className="grid md:grid-cols-12 gap-8">
-          <div className="md:col-start-3 md:col-span-10 flex flex-wrap items-center gap-4">
+          <div className="md:col-start-3 md:col-span-10 flex flex-col md:flex-row md:flex-wrap md:items-center items-start gap-4">
             <a
               href="mailto:awoyemi.olayemi@gmail.com"
               className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-6 py-3 text-[13px] font-medium hover:opacity-90 transition-opacity"
