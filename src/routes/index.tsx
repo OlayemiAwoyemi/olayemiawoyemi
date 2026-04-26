@@ -276,19 +276,19 @@ function Home() {
           <div className="md:col-start-3 md:col-span-10 flex flex-wrap items-center gap-4">
             <a
               href="mailto:awoyemi.olayemi@gmail.com"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-7 py-3.5 text-sm font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-6 py-3 text-[13px] font-medium hover:opacity-90 transition-opacity"
             >
               Get in Touch
             </a>
             <a
               href="mailto:awoyemi.olayemi@gmail.com"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors"
             >
               awoyemi.olayemi@gmail.com
             </a>
             <a
               href="tel:+2348141894696"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors tabular-nums"
             >
               +234 814 189 4696
             </a>
