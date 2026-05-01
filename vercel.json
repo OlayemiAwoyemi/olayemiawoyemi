@@ -2,12 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.tsx",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist/client" }
+      "src": "dist/client/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
