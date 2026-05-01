@@ -1,6 +1,13 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.tsx",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/client" }
+    }
   ],
-  "outputDirectory": "dist/client"
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
