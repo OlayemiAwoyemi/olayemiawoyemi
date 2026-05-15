@@ -98,6 +98,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-stat-blue: var(--stat-blue);
+  --color-stat-green: var(--stat-green);
+  --color-grid-line: var(--grid-line);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
