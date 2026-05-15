@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import heroTech from "@/assets/hero-tech.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,7 +98,7 @@ function Home() {
       <SiteHeader />
 
       {/* Outer grid frame — mimics Crescent's dashed columns */}
-      <div className="mx-auto max-w-[1280px] border-x border-dashed border-grid-line">
+      <div className="mx-auto max-w-[1280px]">
         {/* HERO */}
         <section className="border-b border-dashed border-grid-line px-6 md:px-12 pt-16 md:pt-24 pb-16 md:pb-24">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -109,8 +110,8 @@ function Home() {
             </div>
             <div className="aspect-square w-full rounded-2xl overflow-hidden bg-muted relative">
               <img
-                src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdesigners.guru?w=1400&h=1400"
-                alt="Featured work — Guru Designers"
+                src={heroTech}
+                alt="Olayemi Awoyemi — designer & product manager workspace"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="eager"
               />
@@ -118,20 +119,27 @@ function Home() {
           </div>
 
           {/* Stat cards */}
-          <div className="grid sm:grid-cols-2 gap-5 mt-12 max-w-3xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-12">
             <div className="rounded-2xl bg-stat-blue p-7 min-h-[180px] flex flex-col justify-between">
               <div>
-                <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">10+ years</p>
-                <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">shipping</p>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight">10+ years</p>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight">shipping</p>
               </div>
               <p className="text-[14px] text-foreground/70 mt-6">across brand, product UI, and AI systems</p>
             </div>
             <div className="rounded-2xl bg-stat-green p-7 min-h-[180px] flex flex-col justify-between">
               <div>
-                <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">Available</p>
-                <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">for new work</p>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight">Available</p>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight">for new work</p>
               </div>
               <p className="text-[14px] text-foreground/70 mt-6">accepting 2-3 engagements this quarter</p>
+            </div>
+            <div className="rounded-2xl bg-primary text-primary-foreground p-7 min-h-[180px] flex flex-col justify-between">
+              <div>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight">Africa → US</p>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight">& beyond</p>
+              </div>
+              <p className="text-[14px] text-primary-foreground/80 mt-6">founders & teams shipping across continents</p>
             </div>
           </div>
         </section>
@@ -204,9 +212,9 @@ function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <p className="text-[13px] text-muted-foreground mb-3">Selected works</p>
-              <h2 className="text-3xl md:text-[40px] font-semibold tracking-[-0.02em] leading-tight">Proof of concept.</h2>
+              <h2 className="text-3xl md:text-[40px] font-semibold tracking-[-0.02em] leading-tight">Portfolio.</h2>
             </div>
-            <a href="#contact" className="text-[14px] font-medium text-primary hover:opacity-80 transition-opacity">
+            <a href="#contact" className="text-[14px] font-medium text-foreground hover:opacity-70 transition-opacity">
               Start a project →
             </a>
           </div>
