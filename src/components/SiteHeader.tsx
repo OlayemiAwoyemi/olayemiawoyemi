@@ -28,12 +28,6 @@ export function SiteHeader() {
         <div className="flex items-center gap-5">
           <a
             href="mailto:awoyemi.olayemi@gmail.com"
-            className="text-[15px] font-medium text-foreground/80 hover:text-foreground transition-colors hidden sm:block"
-          >
-            Login
-          </a>
-          <a
-            href="mailto:awoyemi.olayemi@gmail.com"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-full text-[15px] font-medium hover:opacity-90 transition-opacity"
           >
             Get started
