@@ -86,11 +86,11 @@ const services = [
   { title: "Webmaster & Hosting", desc: "Infrastructure, CPanel, WordPress, deployment." },
 ];
 
-function SectionLabel({ n, label }: { n: string; label: string }) {
+function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground tabular-nums">
-      {n} — {label}
-    </p>
+    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
+      {children}
+    </h2>
   );
 }
 
@@ -102,212 +102,212 @@ function thumbnailFor(url: string) {
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <SiteHeader />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 md:px-10 max-w-[1400px] mx-auto">
-        <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">
-          <span className="block md:inline">Communicative Designer</span>
-          <span className="hidden md:inline"> · </span>
-          <span className="block md:inline">Product Manager</span>
-        </p>
-        <h1 className="font-sans font-bold text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-[-0.03em]">
-          Brands that<br />speak wow.
-        </h1>
-        <div className="mt-10 flex items-center gap-6">
-          <a
-            href="#work"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-5 py-2.5 md:px-6 md:py-3 text-[12px] md:text-[13px] font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
-          >
-            See my Works
-          </a>
-          <span className="flex items-center gap-2 text-[12px] md:text-[13px] text-muted-foreground whitespace-nowrap">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            Available for new projects.
-          </span>
-        </div>
-      </section>
-
-      {/* Intro paragraph */}
-      <section className="px-6 md:px-10 max-w-[1400px] mx-auto pb-28">
-        <div className="grid md:grid-cols-12 gap-8">
-          <div className="md:col-span-2">
-            <SectionLabel n="01" label="Intro" />
-          </div>
-          <p className="md:col-span-10 text-xl md:text-2xl lg:text-[26px] leading-[1.45] tracking-[-0.015em] font-normal text-foreground/85">
-            I'm <strong className="font-semibold text-foreground">Olayemi Awoyemi</strong> — a versatile communicative designer and technical product manager.
-            I build <strong className="font-semibold text-foreground">high-converting brands</strong>, polished product interfaces, and <strong className="font-semibold text-foreground">AI-powered systems</strong>.
-            Operating from Ile-Ife, working with clients across Africa, the US, and beyond.
+      <section className="pt-40 pb-24 px-6">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <p className="text-[11px] uppercase tracking-[0.25em] font-bold text-muted-foreground mb-8">
+            Case Study — Olayemi Awoyemi
           </p>
-        </div>
-      </section>
-
-      {/* Work */}
-      <section id="work" className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32 scroll-mt-24">
-        <div className="grid md:grid-cols-12 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <SectionLabel n="02" label="Works" />
-          </div>
-          <h2 className="md:col-span-10 font-sans font-bold text-3xl md:text-4xl lg:text-[44px] tracking-[-0.03em]">Selected works.</h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
-          {projects.map((p) => (
+          <h1 className="text-4xl md:text-6xl lg:text-[72px] font-bold tracking-[-0.035em] leading-[1.05] mb-12 max-w-[900px] mx-auto">
+            How Olayemi builds brands that speak wow and products that ship.
+          </h1>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              key={p.title}
-              href={p.url}
-              target={p.url.startsWith("mailto:") ? undefined : "_blank"}
-              rel="noreferrer"
-              className="group block"
+              href="#work"
+              className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-base font-semibold hover:opacity-90 transition-opacity"
             >
-              <div className={`relative overflow-hidden aspect-[4/3] rounded-[12px] ${p.isCta ? "bg-gradient-to-br from-primary/10 via-secondary to-secondary border border-dashed border-foreground/20 flex items-center justify-center p-8" : "bg-secondary"}`}>
-                {p.isNew && (
-                  <span className="absolute top-4 left-4 z-20 bg-lime-300 text-black text-xs font-medium px-2 py-0.5 rounded-sm">
-                    New
-                  </span>
-                )}
-                {p.isCta ? (
-                  <div className="text-center">
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-4">Now booking</p>
-                    <p className="font-sans font-bold text-2xl md:text-3xl tracking-[-0.025em] leading-[1.1]">
-                      Your project<br />should be next.
-                    </p>
-                    <p className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-medium text-foreground border-b border-foreground/40 pb-0.5">
-                      Start a conversation →
-                    </p>
-                  </div>
-                ) : (
-                  <img
-                    src={thumbnailFor(p.url)}
-                    alt={`${p.title} website screenshot`}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                  />
-                )}
-              </div>
-              <div className="mt-5 flex items-start justify-between gap-6">
-                <div>
-                  <h3 className="font-sans font-semibold text-lg tracking-[-0.015em]">{p.title}</h3>
-                  <p className="text-muted-foreground text-[13px] mt-1.5 leading-relaxed">{p.blurb}</p>
-                </div>
-                <div className="text-right shrink-0">
-                  <p className="text-[13px] font-semibold tabular-nums">{p.year}</p>
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-muted-foreground mt-1.5">
-                    <span className="flex flex-col md:block text-right">
-                      {p.tags.map((t, i) => (
-                        <span key={t}>
-                          {t}
-                          {i < p.tags.length - 1 && <span className="hidden md:inline"> · </span>}
-                        </span>
-                      ))}
-                    </span>
-                  </p>
-                </div>
-              </div>
+              Read full portfolio
             </a>
-          ))}
+            <span className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+              </span>
+              Available for new projects
+            </span>
+          </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32 scroll-mt-24">
-        <div className="grid md:grid-cols-12 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <SectionLabel n="03" label="Services" />
-          </div>
-          <h2 className="md:col-span-10 font-sans font-bold text-3xl md:text-4xl lg:text-[44px] tracking-[-0.03em]">What I do.</h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-          {services.map((s) => (
-            <div key={s.title} className="bg-background p-8 md:p-10">
-              <h3 className="font-sans font-semibold text-lg tracking-[-0.015em]">{s.title}</h3>
-              <p className="text-muted-foreground text-[13px] mt-3 leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* About / Experience */}
-      <section id="about" className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32 scroll-mt-24">
-        <div className="grid md:grid-cols-12 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <SectionLabel n="04" label="About" />
-          </div>
-          <h2 className="md:col-span-10 font-sans font-bold text-2xl md:text-3xl lg:text-[36px] tracking-[-0.025em] leading-[1.25]">
-            I'm Olayemi — I build <strong className="font-bold">brands</strong> and <strong className="font-bold">digital products</strong> that work.
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-12 gap-8 mt-20">
-          <p className="md:col-span-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Experience</p>
-          <ul className="md:col-span-10 divide-y divide-border border-y border-border">
-            {experience.map((e) => (
-              <li key={e.co + e.period} className="grid grid-cols-12 gap-4 py-5">
-                <span className="col-span-12 md:col-span-5 font-sans font-semibold text-lg tracking-[-0.015em]">{e.co}</span>
-                <span className="col-span-7 md:col-span-4 text-muted-foreground text-[14px]">{e.role}</span>
-                <span className="col-span-5 md:col-span-3 text-right md:text-left text-muted-foreground text-[13px] tabular-nums">
-                  {e.period}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="grid md:grid-cols-12 gap-8 mt-16">
-          <p className="md:col-span-2 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Toolkit</p>
-          <p className="md:col-span-10 text-[15px] md:text-base leading-relaxed text-muted-foreground">
-            <strong className="font-semibold text-foreground">Design:</strong> Figma, Adobe Suite, Affinity Designer, Corel, Canva, WordPress, Excel.
-            <br />
-            <strong className="font-semibold text-foreground">Build:</strong> HTML, CSS, JavaScript, Lovable.dev, GitHub, Vercel, CPanel.
-          </p>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32">
-        <div className="grid md:grid-cols-12 gap-8">
-          <div className="md:col-span-2">
-            <SectionLabel n="05" label="Note" />
-          </div>
-          <blockquote className="md:col-span-10 text-xl md:text-2xl lg:text-[28px] leading-[1.4] tracking-[-0.015em] font-normal text-muted-foreground">
-            "I meet demands <strong className="font-semibold text-foreground">efficiently and in record time</strong> — pairing design discipline
-            with the <strong className="font-semibold text-foreground">technical depth to ship products</strong> that hold up."
+      {/* Quote Section - Impactful like Crescent */}
+      <section className="py-24 px-6 border-y border-border/50">
+        <div className="max-w-[900px] mx-auto">
+          <blockquote className="text-2xl md:text-4xl font-medium italic leading-relaxed text-center text-foreground/90">
+            "I meet demands <span className="text-foreground font-bold not-italic">efficiently and in record time</span> — pairing design discipline with the technical depth to <span className="text-foreground font-bold not-italic">ship products</span> that hold up."
           </blockquote>
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center font-bold text-lg">OA</div>
+            <div className="text-left">
+              <p className="font-bold text-sm">Olayemi Awoyemi</p>
+              <p className="text-xs text-muted-foreground">Communicative Designer & Product Manager</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="px-6 md:px-10 max-w-[1400px] mx-auto pb-32 scroll-mt-24">
-        <div className="grid md:grid-cols-12 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <SectionLabel n="06" label="Contact" />
+      {/* Main Story Content - Two Column Layout */}
+      <section className="py-32 px-6">
+        <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-20">
+          {/* Left Narrative */}
+          <div className="lg:col-span-7 space-y-12">
+            <div>
+              <SectionHeading>Transforming brand vision into digital reality</SectionHeading>
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+                I'm <strong>Olayemi Awoyemi</strong> — a versatile communicative designer and technical product manager. 
+                Operating from Ile-Ife, I work with clients across Africa, the US, and beyond to build high-converting brands and polished product interfaces.
+              </p>
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mt-6">
+                My approach combines the creative discipline of branding with the rigorous execution of product management. Whether it's an AI-powered system or a boutique visual identity, I ensure every pixel serves a purpose.
+              </p>
+            </div>
+
+            <div>
+              <SectionHeading>Services tailored for growth</SectionHeading>
+              <div className="grid sm:grid-cols-2 gap-8">
+                {services.map((s) => (
+                  <div key={s.title} className="group">
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <SectionHeading>Experience that speaks for itself</SectionHeading>
+              <div className="space-y-6">
+                {experience.map((e) => (
+                  <div key={e.co + e.period} className="flex flex-col sm:flex-row sm:items-center justify-between py-4 border-b border-border/50">
+                    <div>
+                      <h4 className="font-bold">{e.co}</h4>
+                      <p className="text-sm text-muted-foreground">{e.role}</p>
+                    </div>
+                    <p className="text-sm font-medium text-muted-foreground mt-2 sm:mt-0">{e.period}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h2 className="md:col-span-10 font-sans font-bold text-4xl md:text-5xl lg:text-[64px] tracking-[-0.03em] leading-[1.02]">
-            Have a project?<br />
-            <span className="text-muted-foreground font-bold">Let's talk.</span>
-          </h2>
+
+          {/* Right Sidebar - Stats & Key Results */}
+          <div className="lg:col-span-5">
+            <div className="sticky top-32 space-y-8 bg-secondary/30 p-8 md:p-12 rounded-3xl border border-border/50">
+              <h3 className="text-xl font-bold mb-8">Key Highlights</h3>
+              <div className="space-y-12">
+                <div>
+                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2">2026</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Current Agency Peak</p>
+                </div>
+                <div>
+                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2">10+</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Global Jurisdictions</p>
+                </div>
+                <div>
+                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2">100%</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">QA Discipline Ship Rate</p>
+                </div>
+              </div>
+              
+              <div className="pt-8 border-t border-border/50">
+                <h4 className="font-bold text-sm mb-4 uppercase tracking-wider">Toolkit</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <strong>Design:</strong> Figma, Adobe Suite, Affinity, WordPress.<br/>
+                  <strong>Build:</strong> HTML/CSS, JS, Lovable, GitHub, Vercel.
+                </p>
+              </div>
+
+              <a
+                href="mailto:awoyemi.olayemi@gmail.com"
+                className="block w-full bg-foreground text-background text-center py-4 rounded-full font-bold hover:opacity-90 transition-opacity mt-8"
+              >
+                Book a strategy call
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="grid md:grid-cols-12 gap-8">
-          <div className="md:col-start-3 md:col-span-10 flex flex-col md:flex-row md:flex-wrap md:items-center items-start gap-4">
+      </section>
+
+      {/* Projects Grid */}
+      <section id="work" className="py-32 px-6 bg-secondary/10">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="max-w-xl">
+              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mb-4">Selected Works</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Proof of concept.</h2>
+            </div>
+            <a href="#contact" className="text-sm font-bold border-b-2 border-foreground pb-1 hover:text-muted-foreground hover:border-muted-foreground transition-all">
+              View all projects
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {projects.map((p) => (
+              <a
+                key={p.title}
+                href={p.url}
+                target={p.url.startsWith("mailto:") ? undefined : "_blank"}
+                rel="noreferrer"
+                className="group block"
+              >
+                <div className={`relative overflow-hidden aspect-[16/10] rounded-2xl ${p.isCta ? "bg-primary flex items-center justify-center text-primary-foreground p-12" : "bg-muted"}`}>
+                  {!p.isCta && (
+                    <img
+                      src={thumbnailFor(p.url)}
+                      alt={p.title}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  )}
+                  {p.isNew && (
+                    <span className="absolute top-6 left-6 z-20 bg-lime-400 text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                      New
+                    </span>
+                  )}
+                  {p.isCta && (
+                    <div className="text-center">
+                      <h3 className="text-3xl font-bold mb-4 tracking-tight">Your project should be next.</h3>
+                      <p className="text-primary-foreground/80 font-medium">Let's craft something memorable.</p>
+                    </div>
+                  )}
+                </div>
+                <div className="mt-6 flex justify-between items-start">
+                  <div>
+                    <h3 className="font-bold text-xl mb-1">{p.title}</h3>
+                    <p className="text-sm text-muted-foreground">{p.blurb}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-bold">{p.year}</p>
+                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">{p.tags.join(" · ")}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section id="contact" className="py-40 px-6 text-center">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+            Ready to build something <span className="text-primary/40 italic">extraordinary?</span>
+          </h2>
+          <p className="text-xl text-muted-foreground mb-12">
+            I'm currently accepting new projects and consulting engagements.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
               href="mailto:awoyemi.olayemi@gmail.com"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground rounded-full px-6 py-3 text-[13px] font-medium hover:opacity-90 transition-opacity"
+              className="bg-primary text-primary-foreground px-10 py-5 rounded-full text-lg font-bold hover:opacity-90 transition-opacity"
             >
               Get in Touch
             </a>
             <a
-              href="mailto:awoyemi.olayemi@gmail.com"
-              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors"
-            >
-              awoyemi.olayemi@gmail.com
-            </a>
-            <a
               href="tel:+2348141894696"
-              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors tabular-nums"
+              className="text-lg font-bold hover:text-muted-foreground transition-colors"
             >
               +234 814 189 4696
             </a>
@@ -319,3 +319,4 @@ function Home() {
     </div>
   );
 }
+
