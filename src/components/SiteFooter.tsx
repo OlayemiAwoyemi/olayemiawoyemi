@@ -5,7 +5,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
           <div className="col-span-2 lg:col-span-2">
             <a href="/" className="font-sans font-bold text-2xl tracking-tight block mb-6">
-              Olayemi<span className="text-primary/40">.</span>
+              Olayemi<span className="text-foreground/40">.</span>
             </a>
             <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
               Building brands, products, and AI-powered systems that speak wow and deliver results.
