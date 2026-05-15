@@ -3,11 +3,52 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: 'TWK Lausanne';
+  src: url("https://cdn.prod.website-files.com/67daa2ba2b671853be3265a0/67dab1d18f3280712b9d05a5_TWKLausanne-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TWK Lausanne';
+  src: url("https://cdn.prod.website-files.com/67daa2ba2b671853be3265a0/67dab1dcaa106abd1138c8ed_TWKLausanne-550.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url("https://cdn.prod.website-files.com/67daa2ba2b671853be3265a0/67dad6570c99323b08c09e7d_InstrumentSerif-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url("https://cdn.prod.website-files.com/67daa2ba2b671853be3265a0/67dad6577d8c907297e02fdf_InstrumentSerif-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jetbrains Mono';
+  src: url("https://cdn.prod.website-files.com/67daa2ba2b671853be3265a0/67dabf5e3109915624398ba7_JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Inter', system-ui, sans-serif;
+  --font-sans: 'TWK Lausanne', 'Inter', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-mono: 'Jetbrains Mono', monospace;
 }
 
 @layer base {
@@ -153,5 +194,15 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+
+  blockquote {
+    font-family: var(--font-serif);
   }
 }

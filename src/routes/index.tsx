@@ -108,7 +108,7 @@ function Home() {
       {/* Hero */}
       <section className="pt-40 pb-24 px-6">
         <div className="max-w-[1200px] mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.25em] font-bold text-muted-foreground mb-8">
+          <p className="text-[11px] uppercase tracking-[0.25em] font-bold text-muted-foreground mb-8 font-mono">
             Case Study — Olayemi Awoyemi
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-[72px] font-bold tracking-[-0.035em] leading-[1.05] mb-12 max-w-[900px] mx-auto">
@@ -135,7 +135,7 @@ function Home() {
       {/* Quote Section - Impactful like Crescent */}
       <section className="py-24 px-6 border-y border-border/50">
         <div className="max-w-[900px] mx-auto">
-          <blockquote className="text-2xl md:text-4xl font-medium italic leading-relaxed text-center text-foreground/90">
+          <blockquote className="text-2xl md:text-5xl font-medium italic leading-tight text-center text-foreground/90 font-serif">
             "I meet demands <span className="text-foreground font-bold not-italic">efficiently and in record time</span> — pairing design discipline with the technical depth to <span className="text-foreground font-bold not-italic">ship products</span> that hold up."
           </blockquote>
           <div className="mt-10 flex items-center justify-center gap-4">
@@ -185,7 +185,7 @@ function Home() {
                       <h4 className="font-bold">{e.co}</h4>
                       <p className="text-sm text-muted-foreground">{e.role}</p>
                     </div>
-                    <p className="text-sm font-medium text-muted-foreground mt-2 sm:mt-0">{e.period}</p>
+                    <p className="text-sm font-medium text-muted-foreground mt-2 sm:mt-0 font-mono">{e.period}</p>
                   </div>
                 ))}
               </div>
@@ -198,22 +198,23 @@ function Home() {
               <h3 className="text-xl font-bold mb-8">Key Highlights</h3>
               <div className="space-y-12">
                 <div>
-                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2">2026</p>
+                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2 font-mono">2026</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Current Agency Peak</p>
                 </div>
                 <div>
-                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2">10+</p>
+                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2 font-mono">10+</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Global Jurisdictions</p>
                 </div>
                 <div>
-                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2">100%</p>
+                  <p className="text-4xl md:text-5xl font-bold tracking-tight mb-2 font-mono">100%</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">QA Discipline Ship Rate</p>
                 </div>
               </div>
+
               
               <div className="pt-8 border-t border-border/50">
                 <h4 className="font-bold text-sm mb-4 uppercase tracking-wider">Toolkit</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed font-mono">
                   <strong>Design:</strong> Figma, Adobe Suite, Affinity, WordPress.<br/>
                   <strong>Build:</strong> HTML/CSS, JS, Lovable, GitHub, Vercel.
                 </p>
@@ -262,7 +263,7 @@ function Home() {
                     />
                   )}
                   {p.isNew && (
-                    <span className="absolute top-6 left-6 z-20 bg-lime-400 text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                    <span className="absolute top-6 left-6 z-20 bg-lime-400 text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider font-mono">
                       New
                     </span>
                   )}
@@ -279,8 +280,8 @@ function Home() {
                     <p className="text-sm text-muted-foreground">{p.blurb}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-bold">{p.year}</p>
-                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">{p.tags.join(" · ")}</p>
+                    <p className="text-sm font-bold font-mono">{p.year}</p>
+                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1 font-mono">{p.tags.join(" · ")}</p>
                   </div>
                 </div>
               </a>
