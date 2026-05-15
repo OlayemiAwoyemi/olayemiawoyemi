@@ -1,10 +1,25 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import netlify from "@netlify/vite-plugin-tanstack-start";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
+import { fileURLToPath } from "url";
+import path from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  vite: {
-    plugins: [netlify()]
-  }
+  plugins: [
+    tailwindcss(),
+    react(),
+    tsconfigPaths(),
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    outDir: "dist/client",
+  },
 });
